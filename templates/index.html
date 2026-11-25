@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prediksi Performa Siswa</title>
+  <style>
+    :root { color-scheme: light; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f4f6fb;
+      color: #1c2434;
+    }
+    header {
+      background: #23395b;
+      color: #fff;
+      padding: 28px 20px;
+      text-align: center;
+    }
+    header h1 { margin: 0 0 8px; font-size: 1.7rem; }
+    header p { margin: 0; opacity: .85; }
+    main { max-width: 950px; margin: 24px auto; padding: 0 16px 48px; }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 6px 20px rgba(25, 40, 70, .08);
+      margin-bottom: 20px;
+    }
+    .stats { display: flex; gap: 16px; flex-wrap: wrap; }
+    .stat { flex: 1; min-width: 160px; background: #eef2f9; border-radius: 8px; padding: 12px 16px; }
+    .stat b { display: block; font-size: 1.3rem; color: #23395b; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 14px;
+    }
+    label { display: flex; flex-direction: column; gap: 6px; font-size: .85rem; color: #4a5568; }
+    .hint { font-size: .72rem; color: #8590a3; }
+    .steps { margin: 0; padding-left: 22px; line-height: 1.8; }
+    input, select {
+      padding: 9px 10px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font: inherit;
+      background: #fff;
+    }
+    input:focus, select:focus { outline: 2px solid #5b83c4; border-color: transparent; }
+    button {
+      margin-top: 20px;
+      background: #23395b;
+      color: #fff;
+      border: 0;
+      border-radius: 8px;
+      padding: 12px 26px;
+      font: inherit;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:hover { background: #2f4d78; }
+    .result { border-radius: 10px; padding: 20px; margin-top: 20px; }
+    .result.pass { background: #e7f7ed; color: #17603a; }
+    .result.fail { background: #fdeaea; color: #8a2020; }
+    .result h2 { margin: 0 0 10px; }
+    .bar { height: 10px; border-radius: 999px; background: rgba(0,0,0,.12); overflow: hidden; margin: 12px 0 8px; }
+    .bar span { display: block; height: 100%; background: currentColor; }
+    .error { background: #fff3cd; color: #7a5600; padding: 14px; border-radius: 8px; margin-top: 18px; }
+    footer { text-align: center; color: #667085; font-size: .82rem; padding: 0 16px 32px; }
+    footer a { color: #355a91; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Prediksi Performa Siswa</h1>
+    <p>Masukkan atribut siswa untuk memprediksi kelulusan mata pelajaran Matematika.</p>
+  </header>
+  <main>
+    <section class="card">
+      <div class="stats">
+        <div class="stat"><b>{{ROWS}}</b><span>baris data latih</span></div>
+        <div class="stat"><b>{{ACCURACY}}</b><span>akurasi uji</span></div>
+        <div class="stat"><b>{{F1}}</b><span>F1-score uji</span></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 style="margin-top:0">Alur prediksi</h2>
+      <ol class="steps">
+        <li>Isi atribut siswa pada form di bawah.</li>
+        <li>Klik tombol <strong>Prediksi</strong>.</li>
+        <li>Input diubah menjadi angka: data numerik diskalakan, data kategorikal di-encode.</li>
+        <li>Model Random Forest menghitung probabilitas kelulusan.</li>
+        <li>Hasil <strong>Lulus</strong> atau <strong>Tidak Lulus</strong> ditampilkan beserta probabilitasnya.</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <form method="post" action="/">
+        <div class="grid">{{FIELDS}}</div>
+        <button type="submit">Prediksi</button>
+      </form>
+      {{ERROR}}
+      {{RESULT}}
+    </section>
+  </main>
+  <footer>
+    Sumber dataset: {{SOURCE}} &mdash; Student Performance Data Set. Nilai G3 &ge; 10 didefinisikan sebagai lulus.
+  </footer>
+</body>
+</html>

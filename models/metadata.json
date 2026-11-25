@@ -1,0 +1,205 @@
+{
+  "target": "passed",
+  "positive_label": "Lulus",
+  "negative_label": "Tidak Lulus",
+  "pass_threshold": 10,
+  "numeric": [
+    "age",
+    "Medu",
+    "Fedu",
+    "traveltime",
+    "studytime",
+    "failures",
+    "famrel",
+    "freetime",
+    "goout",
+    "Dalc",
+    "Walc",
+    "health",
+    "absences",
+    "G1",
+    "G2"
+  ],
+  "categorical": [
+    "school",
+    "sex",
+    "address",
+    "famsize",
+    "Pstatus",
+    "Mjob",
+    "Fjob",
+    "reason",
+    "guardian",
+    "schoolsup",
+    "famsup",
+    "paid",
+    "activities",
+    "nursery",
+    "higher",
+    "internet",
+    "romantic"
+  ],
+  "categories": {
+    "school": [
+      "GP",
+      "MS"
+    ],
+    "sex": [
+      "F",
+      "M"
+    ],
+    "address": [
+      "R",
+      "U"
+    ],
+    "famsize": [
+      "GT3",
+      "LE3"
+    ],
+    "Pstatus": [
+      "A",
+      "T"
+    ],
+    "Mjob": [
+      "at_home",
+      "health",
+      "other",
+      "services",
+      "teacher"
+    ],
+    "Fjob": [
+      "at_home",
+      "health",
+      "other",
+      "services",
+      "teacher"
+    ],
+    "reason": [
+      "course",
+      "home",
+      "other",
+      "reputation"
+    ],
+    "guardian": [
+      "father",
+      "mother",
+      "other"
+    ],
+    "schoolsup": [
+      "no",
+      "yes"
+    ],
+    "famsup": [
+      "no",
+      "yes"
+    ],
+    "paid": [
+      "no",
+      "yes"
+    ],
+    "activities": [
+      "no",
+      "yes"
+    ],
+    "nursery": [
+      "no",
+      "yes"
+    ],
+    "higher": [
+      "no",
+      "yes"
+    ],
+    "internet": [
+      "no",
+      "yes"
+    ],
+    "romantic": [
+      "no",
+      "yes"
+    ]
+  },
+  "ranges": {
+    "age": {
+      "min": 15,
+      "max": 22,
+      "mean": 16.7
+    },
+    "Medu": {
+      "min": 0,
+      "max": 4,
+      "mean": 2.75
+    },
+    "Fedu": {
+      "min": 0,
+      "max": 4,
+      "mean": 2.52
+    },
+    "traveltime": {
+      "min": 1,
+      "max": 4,
+      "mean": 1.45
+    },
+    "studytime": {
+      "min": 1,
+      "max": 4,
+      "mean": 2.04
+    },
+    "failures": {
+      "min": 0,
+      "max": 3,
+      "mean": 0.33
+    },
+    "famrel": {
+      "min": 1,
+      "max": 5,
+      "mean": 3.94
+    },
+    "freetime": {
+      "min": 1,
+      "max": 5,
+      "mean": 3.24
+    },
+    "goout": {
+      "min": 1,
+      "max": 5,
+      "mean": 3.11
+    },
+    "Dalc": {
+      "min": 1,
+      "max": 5,
+      "mean": 1.48
+    },
+    "Walc": {
+      "min": 1,
+      "max": 5,
+      "mean": 2.29
+    },
+    "health": {
+      "min": 1,
+      "max": 5,
+      "mean": 3.55
+    },
+    "absences": {
+      "min": 0,
+      "max": 75,
+      "mean": 5.71
+    },
+    "G1": {
+      "min": 3,
+      "max": 19,
+      "mean": 10.91
+    },
+    "G2": {
+      "min": 0,
+      "max": 19,
+      "mean": 10.71
+    }
+  },
+  "dataset": {
+    "file": "student-mat.csv",
+    "source": "UCI Machine Learning Repository",
+    "title": "Student Performance Data Set",
+    "url": "https://archive.ics.uci.edu/dataset/320/student+performance",
+    "rows": 395
+  }
+}
